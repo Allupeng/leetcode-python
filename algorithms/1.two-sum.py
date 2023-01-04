@@ -64,10 +64,10 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         ## 字典的key存储的是值，value是在list当中的索引
         d = dict()
-        for num in enumerate(nums):
-            if d.get(target - num[1]) is not None:
-                return [d.get(target - num[1]),num[0]]
-            d[num[1]] = num[0]
+        for i, value in enumerate(nums):
+            if d.get(target - nums[i]) is not None:
+                return [d.get(target - nums[i]),i]
+            d[value] = i
         return None
 
         
